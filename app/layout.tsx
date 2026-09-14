@@ -1,51 +1,102 @@
-import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
-import AosInit from "@/components/AosInit";
+import type { Metadata, Viewport } from "next";
+import { Cormorant_Garamond, Jost } from "next/font/google";
+import Header from "@/components/site/Header";
+import Footer from "@/components/site/Footer";
+import WhatsAppFab from "@/components/site/WhatsAppFab";
+import ConsentBanner from "@/components/site/ConsentBanner";
+import { business, SITE_URL } from "@/lib/site";
+import { daySpaSchema, websiteSchema } from "@/lib/schema";
 import "./globals.css";
 
-const montserrat = Montserrat({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
+  weight: ["400"],
+  style: ["normal", "italic"],
   display: "swap",
-  variable: "--font-montserrat",
+  variable: "--font-cormorant",
+});
+
+const jost = Jost({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+  variable: "--font-jost",
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Serenari Spa | Massoterapia Humanizada em Suzano/SP",
+    default: "Serenari Spa | Massagem e massoterapia em Suzano/SP",
     template: "%s | Serenari Spa",
   },
   description:
-    "Espaço de massoterapia humanizada em Suzano/SP. Oferecemos experiências de bem-estar com acolhimento, presença e cuidado para transformar o toque em saúde e equilíbrio.",
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
+    "Spa de massoterapia humanizada em Suzano/SP. Massagem relaxante, terapêutica, drenagem linfática e terapias corporais em um espaço de pausa e reconexão.",
+  applicationName: business.name,
+  authors: [{ name: business.legalName }],
+  keywords: [
+    "spa em Suzano",
+    "massagem em Suzano",
+    "massagem relaxante Suzano",
+    "massagem terapêutica Suzano",
+    "drenagem linfática Suzano",
+    "massoterapia Suzano",
+  ],
+  alternates: { canonical: "/" },
   openGraph: {
-    siteName: "Serenari Spa",
-    locale: "pt_BR",
     type: "website",
-    images: ["/logo-serenari-preview.png"],
+    locale: "pt_BR",
+    siteName: business.name,
+    url: SITE_URL,
+    title: "Serenari Spa | Massagem e massoterapia em Suzano/SP",
+    description:
+      "Um espaço de pausa, cuidado e reconexão em Suzano/SP. Massagens, drenagem linfática e terapias corporais.",
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/logo-serenari-preview.png"],
+    title: "Serenari Spa | Massagem e massoterapia em Suzano/SP",
+    description:
+      "Um espaço de pausa, cuidado e reconexão em Suzano/SP. Massagens, drenagem linfática e terapias corporais.",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
+  formatDetection: { telephone: true, address: true },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#f6f3ec",
+  colorScheme: "light",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-br" className={montserrat.variable}>
+    <html lang="pt-BR" className={`${cormorant.variable} ${jost.variable}`}>
       <body>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-          crossOrigin="anonymous"
-          referrerPolicy="no-referrer"
+        {/* Content is revealed on scroll; without JS it must still be readable. */}
+        <noscript>
+          <style>{`.reveal,.reveal--mask,.reveal--mask>*{opacity:1!important;transform:none!important;clip-path:none!important}`}</style>
+        </noscript>
+
+        <a className="skip-link" href="#conteudo">
+          Ir para o conteúdo
+        </a>
+
+        <Header />
+        <main id="conteudo">{children}</main>
+        <Footer />
+        <WhatsAppFab />
+        <ConsentBanner />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(daySpaSchema()) }}
         />
-        <AosInit />
-        {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema()) }}
+        />
       </body>
     </html>
   );

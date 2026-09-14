@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import LegalPageShell from "@/components/LegalPageShell";
+import LegalPage from "@/components/site/LegalPage";
 
 export const metadata: Metadata = {
   title: "Termos de Uso",
   description: "Leia os Termos de Uso do Serenari Spa. Informações importantes sobre a utilização de nossos serviços e site.",
+  alternates: { canonical: "/termos" },
   openGraph: {
     title: "Termos de Uso | Serenari Spa",
     description: "Informações importantes sobre a utilização de nossos serviços e site.",
@@ -17,9 +18,7 @@ export const metadata: Metadata = {
 
 export default function TermosPage() {
   return (
-    <LegalPageShell>
-      <h1>Termos de Uso do Serenari Spa</h1>
-      <p>Estes Termos de Uso foram atualizados em: 29 de Maio de 2024.</p>
+    <LegalPage title="Termos de Uso" updatedAt="29 de maio de 2024">
 
       <h2>1. Introdução</h2>
       <p>
@@ -150,6 +149,6 @@ export default function TermosPage() {
         <br />
         Telefone/WhatsApp: (11) 5108-1983
       </p>
-    </LegalPageShell>
+    </LegalPage>
   );
 }
