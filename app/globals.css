@@ -376,17 +376,21 @@ section[id] {
   color: var(--copper);
 }
 
+/* The real brand symbol, cropped from the lockup and painted through a mask so it
+   picks up the section's colour. Kept faint and deliberately cut by the section edge. */
 .mark-watermark {
   position: absolute;
   pointer-events: none;
-  color: var(--forest);
+  width: clamp(11rem, 38vw, 32rem);
+  aspect-ratio: 535 / 883;
+  background-color: var(--forest);
   opacity: 0.06;
-  width: clamp(18rem, 42vw, 34rem);
-  height: auto;
+  -webkit-mask: url("/brand/serenari-symbol.png") center / contain no-repeat;
+  mask: url("/brand/serenari-symbol.png") center / contain no-repeat;
 }
 
 .section--ink .mark-watermark {
-  color: var(--paper);
+  background-color: var(--paper);
   opacity: 0.07;
 }
 
