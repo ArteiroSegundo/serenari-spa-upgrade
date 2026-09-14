@@ -927,6 +927,22 @@ section[id] {
 }
 
 @media (min-width: 900px) {
+  /* The hero is sized to the viewport, not to a fixed height. Before this it was
+     ~930px tall on every screen, which pushed the primary CTA below the fold on
+     short laptop displays. */
+  .hero {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding-top: calc(var(--header-h) + clamp(1rem, 3vh, 3rem));
+    padding-bottom: clamp(1.5rem, 4vh, 4rem);
+  }
+
+  .hero__title {
+    font-size: min(var(--step-5), 12.5vh);
+  }
+
   .hero__grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
     gap: clamp(3rem, 6vw, 6rem);
@@ -934,6 +950,7 @@ section[id] {
 
   .hero__figure {
     aspect-ratio: 3 / 4;
+    max-height: calc(100svh - var(--header-h) - clamp(5rem, 12vh, 9rem));
   }
 
   .hero__figure-secondary {
@@ -947,11 +964,6 @@ section[id] {
   }
 }
 
-@media (min-width: 1200px) {
-  .hero {
-    padding-top: calc(var(--header-h) + 3.5rem);
-  }
-}
 
 /* Trust strip under the hero */
 .trust {
