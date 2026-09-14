@@ -22,8 +22,8 @@ export default function Hero() {
           </h1>
 
           <p className="lede hero__lede">
-            Um espaço de massoterapia humanizada em Suzano, feito para devolver o que a rotina tira: tempo,
-            silêncio e presença.
+            Um espaço de massoterapia humanizada, feito para devolver o que a rotina tira: tempo, silêncio e
+            presença.
           </p>
 
           <div className="btn-row">
