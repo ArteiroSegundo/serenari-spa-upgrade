@@ -84,13 +84,7 @@ export const services: Service[] = [
       height: 2133,
       alt: "Sessão de massagem terapêutica nas costas em sala do Serenari Spa",
     },
-    gallery: [
-      { src: "/services/massagem-terapeutica/02.jpg", width: 1600, height: 1667 },
-      { src: "/services/massagem-terapeutica/03.jpg", width: 1600, height: 1794 },
-      { src: "/services/massagem-terapeutica/04.jpg", width: 1600, height: 2027 },
-      { src: "/services/massagem-terapeutica/05.jpg", width: 1600, height: 1792 },
-      { src: "/services/massagem-terapeutica/06.jpg", width: 1600, height: 1828 },
-    ],
+    gallery: [],
   },
   {
     slug: "drenagem-linfatica-corporal",
@@ -122,11 +116,6 @@ export const services: Service[] = [
       { src: "/services/drenagem-corporal/04.jpg", width: 1600, height: 1990 },
       { src: "/services/drenagem-corporal/05.jpg", width: 1600, height: 2026 },
       { src: "/services/drenagem-corporal/06.jpg", width: 1600, height: 2133 },
-      { src: "/services/drenagem-corporal/07.jpg", width: 1600, height: 2133 },
-      { src: "/services/drenagem-corporal/08.jpg", width: 1600, height: 2133 },
-      { src: "/services/drenagem-corporal/09.jpg", width: 1600, height: 1840 },
-      { src: "/services/drenagem-corporal/10.jpg", width: 1600, height: 1917 },
-      { src: "/services/drenagem-corporal/11.jpg", width: 1600, height: 2021 },
     ],
   },
   {
@@ -246,7 +235,6 @@ export const services: Service[] = [
       { src: "/services/liberacao-miofascial/04.jpg", width: 1600, height: 2624 },
       { src: "/services/liberacao-miofascial/05.jpg", width: 1600, height: 1631 },
       { src: "/services/liberacao-miofascial/06.jpg", width: 1600, height: 1670 },
-      { src: "/services/liberacao-miofascial/07.jpg", width: 1600, height: 2133 },
     ],
   },
   {
@@ -305,14 +293,7 @@ export const services: Service[] = [
       height: 2133,
       alt: "Sessão de shiatsu com pressão dos dedos nas costas de um cliente no Serenari Spa",
     },
-    gallery: [
-      { src: "/services/shiatsu/02.jpg", width: 1600, height: 2133 },
-      { src: "/services/shiatsu/03.jpg", width: 1600, height: 1840 },
-      { src: "/services/shiatsu/04.jpg", width: 1600, height: 1667 },
-      { src: "/services/shiatsu/05.jpg", width: 1600, height: 1794 },
-      { src: "/services/shiatsu/06.jpg", width: 1600, height: 1792 },
-      { src: "/services/shiatsu/07.jpg", width: 1600, height: 1828 },
-    ],
+    gallery: [],
   },
   {
     slug: "reflexologia-podal",
@@ -387,11 +368,7 @@ export const services: Service[] = [
       height: 1612,
       alt: "Drenagem linfática facial aplicada no rosto de uma cliente no Serenari Spa",
     },
-    gallery: [
-      { src: "/services/drenagem-facial/02.jpg", width: 1600, height: 2133 },
-      { src: "/services/drenagem-facial/03.jpg", width: 1600, height: 1934 },
-      { src: "/services/drenagem-facial/04.jpg", width: 1600, height: 1880 },
-    ],
+    gallery: [{ src: "/services/drenagem-facial/02.jpg", width: 1600, height: 2133 }],
   },
   {
     slug: "revitalizacao-facial",
@@ -416,11 +393,7 @@ export const services: Service[] = [
       height: 1934,
       alt: "Ritual de revitalização facial aplicado em cliente no Serenari Spa",
     },
-    gallery: [
-      { src: "/services/revitalizacao-facial/01.jpg", width: 1600, height: 1612 },
-      { src: "/services/revitalizacao-facial/02.jpg", width: 1600, height: 2133 },
-      { src: "/services/revitalizacao-facial/04.jpg", width: 1600, height: 1880 },
-    ],
+    gallery: [{ src: "/services/revitalizacao-facial/04.jpg", width: 1600, height: 1880 }],
   },
   {
     slug: "limpeza-de-pele-natural",
