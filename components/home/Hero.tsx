@@ -64,10 +64,10 @@ export default function Hero() {
         <div className="hero__media">
           <div className="photo photo--arch hero__figure">
             <Image
-              src="/services/massagem-relaxante/01.jpg"
-              alt="Massoterapeuta do Serenari Spa conduzindo uma sessão de massagem relaxante"
-              width={1600}
-              height={1667}
+              src="/sobre-nos/01.jpg"
+              alt="Lounge de espera do Serenari Spa, com poltronas claras e iluminação indireta"
+              width={1086}
+              height={1448}
               sizes="(min-width: 900px) 46vw, 100vw"
               quality={78}
               priority
@@ -76,10 +76,10 @@ export default function Hero() {
 
           <Reveal variant="mask" delay={260} className="photo hero__figure-secondary">
             <Image
-              src="/sobre-nos/01.jpg"
-              alt="Lounge de espera do Serenari Spa"
-              width={1086}
-              height={1448}
+              src="/sobre-nos/09.jpg"
+              alt="Bandeja de boas-vindas com frutas e chá servida na sala de massagem"
+              width={1600}
+              height={2133}
               sizes="14vw"
               quality={70}
             />

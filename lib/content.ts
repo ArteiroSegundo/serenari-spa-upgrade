@@ -56,19 +56,25 @@ export const testimonials: Testimonial[] = [
 
 export type SpacePhoto = { src: string; width: number; height: number; alt: string };
 
+/**
+ * The first five feed the editorial grid on the home page; the rest only appear
+ * inside the full-gallery dialog. Photos used elsewhere on the home page — 01 and 09
+ * in the hero, 04 in the philosophy section — are deliberately kept out of that first
+ * slice so no image repeats within a single screen.
+ */
 export const spacePhotos: SpacePhoto[] = [
-  { src: "/sobre-nos/01.jpg", width: 1086, height: 1448, alt: "Lounge de espera do Serenari Spa, com poltronas claras e iluminação indireta" },
   { src: "/sobre-nos/05.jpg", width: 1600, height: 2133, alt: "Sala de massagem dupla preparada, com enxoval branco e bandeja de boas-vindas" },
   { src: "/sobre-nos/08.jpg", width: 1600, height: 2134, alt: "Óleos essenciais e flores sobre bancada de madeira no Serenari Spa" },
   { src: "/sobre-nos/12.jpg", width: 1600, height: 2133, alt: "Sala dupla do Serenari Spa com toalhas dobradas em formato de cisnes" },
   { src: "/sobre-nos/02.jpg", width: 1201, height: 1309, alt: "Recepção do Serenari Spa" },
-  { src: "/sobre-nos/03.jpg", width: 1600, height: 2133, alt: "Estação de café e boas-vindas do Serenari Spa" },
   { src: "/sobre-nos/07.jpg", width: 1600, height: 2133, alt: "Sala de massagem individual do Serenari Spa" },
+  { src: "/sobre-nos/01.jpg", width: 1086, height: 1448, alt: "Lounge de espera do Serenari Spa, com poltronas claras e iluminação indireta" },
+  { src: "/sobre-nos/03.jpg", width: 1600, height: 2133, alt: "Estação de café e boas-vindas do Serenari Spa" },
+  { src: "/sobre-nos/04.jpg", width: 1600, height: 2181, alt: "Espaço de espera com o símbolo Serenari na parede" },
+  { src: "/sobre-nos/06.jpg", width: 1600, height: 2133, alt: "Detalhe da bandeja de boas-vindas do Serenari Spa" },
   { src: "/sobre-nos/09.jpg", width: 1600, height: 2133, alt: "Bandeja de boas-vindas com frutas servida no Serenari Spa" },
   { src: "/sobre-nos/10.jpg", width: 1600, height: 2134, alt: "Sala de massagem individual preparada para a sessão" },
   { src: "/sobre-nos/11.jpg", width: 1600, height: 1717, alt: "Sala de massagem dupla do Serenari Spa vista pelo espelho" },
-  { src: "/sobre-nos/04.jpg", width: 1600, height: 2181, alt: "Espaço de espera com o símbolo Serenari na parede" },
-  { src: "/sobre-nos/06.jpg", width: 1600, height: 2133, alt: "Detalhe da bandeja de boas-vindas do Serenari Spa" },
 ];
 
 /** Mission, vision and values — told as three chapters instead of three cards. */
