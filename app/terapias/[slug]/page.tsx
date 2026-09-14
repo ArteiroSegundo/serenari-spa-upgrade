@@ -62,7 +62,7 @@ export default async function TherapyPage({ params }: Params) {
             </nav>
 
             <div className="therapy-hero">
-              <Reveal variant="mask" className="photo photo--arch therapy-hero__media">
+              <div className="photo photo--arch therapy-hero__media">
                 <Image
                   src={service.cover.src}
                   alt={service.cover.alt}
@@ -71,8 +71,9 @@ export default async function TherapyPage({ params }: Params) {
                   sizes="(min-width: 900px) 45vw, 100vw"
                   quality={78}
                   priority
+                  fetchPriority="high"
                 />
-              </Reveal>
+              </div>
 
               <div className="therapy-hero__body">
                 <Reveal>

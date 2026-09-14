@@ -61,7 +61,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero__media">
+        <div className="hero__media" data-media-kind="image">
           <div className="photo photo--arch hero__figure">
             <Image
               src="/sobre-nos/01.jpg"
@@ -71,6 +71,7 @@ export default function Hero() {
               sizes="(min-width: 900px) 46vw, 100vw"
               quality={78}
               priority
+              fetchPriority="high"
             />
           </div>
 
