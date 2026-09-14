@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import LegalPageShell from "@/components/LegalPageShell";
+import LegalPage from "@/components/site/LegalPage";
 
 export const metadata: Metadata = {
   title: "Política de Privacidade",
   description: "Leia a Política de Privacidade do Serenari Spa. Entenda como coletamos, usamos e protegemos seus dados pessoais.",
+  alternates: { canonical: "/privacidade" },
   openGraph: {
     title: "Política de Privacidade | Serenari Spa",
     description: "Entenda como coletamos, usamos e protegemos seus dados pessoais.",
@@ -17,9 +18,7 @@ export const metadata: Metadata = {
 
 export default function PrivacidadePage() {
   return (
-    <LegalPageShell>
-      <h1>Política de Privacidade do Serenari Spa</h1>
-      <p>Esta Política de Privacidade foi atualizada em: 29 de Maio de 2024.</p>
+    <LegalPage title="Política de Privacidade" updatedAt="29 de maio de 2024">
 
       <h2>1. Introdução</h2>
       <p>
@@ -216,6 +215,6 @@ export default function PrivacidadePage() {
         <br />
         Telefone/WhatsApp: (11) 5108-1983
       </p>
-    </LegalPageShell>
+    </LegalPage>
   );
 }
