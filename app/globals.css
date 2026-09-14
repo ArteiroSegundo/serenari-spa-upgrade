@@ -612,7 +612,6 @@ section[id] {
    without scroll-driven animations simply render a still image, and no JS is involved. */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
-    .hero__figure img,
     .about__photo img {
       animation: photo-drift linear both;
       animation-timeline: view();
@@ -921,6 +920,35 @@ section[id] {
 
 .hero__figure {
   aspect-ratio: 4 / 5;
+}
+
+.hero__poster,
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__poster img,
+.hero__video {
+  object-fit: cover;
+  filter: saturate(0.74) contrast(1.05) brightness(1.03) sepia(0.07);
+}
+
+.hero__video {
+  opacity: 0;
+  transition: opacity 500ms var(--ease);
+}
+
+.hero__video[data-playing="true"] {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__video {
+    display: none;
+  }
 }
 
 .hero__figure-secondary {
