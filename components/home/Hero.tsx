@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import HeroVideo from "@/components/home/HeroVideo";
 import Reveal from "@/components/ui/Reveal";
 import { ArrowRight, Clock, MapPin, Star } from "@/components/ui/Icons";
 import { business, whatsappLink, whatsappMessages } from "@/lib/site";
@@ -7,7 +8,7 @@ import { business, whatsappLink, whatsappMessages } from "@/lib/site";
 /**
  * The hero copy renders at first paint on purpose — fading it in would push the
  * Largest Contentful Paint a full second past the first paint. The same applies to
- * the lead photograph, so only the small inset image animates in.
+ * the lead media, so only the small inset image animates in.
  */
 export default function Hero() {
   return (
@@ -61,17 +62,9 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero__media">
+        <div className="hero__media" data-media-kind="video">
           <div className="photo photo--arch hero__figure">
-            <Image
-              src="/sobre-nos/01.jpg"
-              alt="Lounge de espera do Serenari Spa, com poltronas claras e iluminação indireta"
-              width={1086}
-              height={1448}
-              sizes="(min-width: 900px) 46vw, 100vw"
-              quality={78}
-              priority
-            />
+            <HeroVideo />
           </div>
 
           <Reveal variant="mask" delay={260} className="photo hero__figure-secondary">

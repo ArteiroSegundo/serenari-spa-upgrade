@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
+    qualities: [60, 68, 70, 72, 76, 78],
     // The site never renders a photo wider than half of a 2560px viewport.
     deviceSizes: [360, 420, 640, 828, 1080, 1280, 1600],
     imageSizes: [88, 128, 200, 256, 384],

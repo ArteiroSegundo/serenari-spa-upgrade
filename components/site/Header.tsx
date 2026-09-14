@@ -20,6 +20,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const toggleRef = useRef<HTMLButtonElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setPinned(window.scrollY > 12);
@@ -33,14 +34,35 @@ export default function Header() {
   useEffect(() => {
     if (!open) return;
     document.body.style.overflow = "hidden";
+
+    const drawerFocusable = drawerRef.current?.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    );
+    const focusable = drawerFocusable ? [...drawerFocusable, toggleRef.current].filter(Boolean) as HTMLElement[] : [];
+    const focusFrame = window.requestAnimationFrame(() => focusable[0]?.focus());
+
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setOpen(false);
         toggleRef.current?.focus();
       }
+
+      if (event.key === "Tab" && focusable.length) {
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
     };
     window.addEventListener("keydown", onKeyDown);
     return () => {
+      window.cancelAnimationFrame(focusFrame);
       document.body.style.overflow = "";
       window.removeEventListener("keydown", onKeyDown);
     };
@@ -98,7 +120,13 @@ export default function Header() {
         </div>
       </header>
 
-      <div id="menu-mobile" className="drawer" data-open={open ? "true" : "false"} inert={!open}>
+      <div
+        ref={drawerRef}
+        id="menu-mobile"
+        className="drawer"
+        data-open={open ? "true" : "false"}
+        inert={!open}
+      >
         <nav aria-label="Navegação mobile">
           <ul className="drawer__links">
             {NAV.map((item) => (

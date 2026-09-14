@@ -43,12 +43,7 @@ export function daySpaSchema() {
     hasMap: business.maps.place,
     openingHoursSpecification: openingHours(),
     sameAs: [business.social.instagram, business.social.facebook, business.maps.place],
-    areaServed: [
-      { "@type": "City", name: "Suzano" },
-      { "@type": "City", name: "Mogi das Cruzes" },
-      { "@type": "City", name: "Poá" },
-      { "@type": "City", name: "Itaquaquecetuba" },
-    ],
+    areaServed: { "@type": "City", name: business.address.city },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Terapias do Serenari Spa",

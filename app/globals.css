@@ -581,7 +581,7 @@ section[id] {
 
 .reveal {
   opacity: 0;
-  transform: translateY(22px);
+  transform: translateY(16px);
   transition: opacity 900ms var(--ease), transform 900ms var(--ease);
   transition-delay: var(--reveal-delay, 0ms);
 }
@@ -612,7 +612,6 @@ section[id] {
    without scroll-driven animations simply render a still image, and no JS is involved. */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
-    .hero__figure img,
     .about__photo img {
       animation: photo-drift linear both;
       animation-timeline: view();
@@ -623,11 +622,11 @@ section[id] {
 
 @keyframes photo-drift {
   from {
-    scale: 1.07;
+    scale: 1.015;
     translate: 0 -1.8%;
   }
   to {
-    scale: 1.07;
+    scale: 1.015;
     translate: 0 1.8%;
   }
 }
@@ -801,12 +800,13 @@ section[id] {
   background-color: var(--paper);
   transform: translateY(-100%);
   visibility: hidden;
-  transition: transform 620ms var(--ease), visibility 620ms;
+  transition: transform 620ms var(--ease), visibility 0s linear 620ms;
 }
 
 .drawer[data-open="true"] {
   transform: translateY(0);
   visibility: visible;
+  transition-delay: 0s;
 }
 
 .drawer__links {
@@ -922,6 +922,35 @@ section[id] {
   aspect-ratio: 4 / 5;
 }
 
+.hero__poster,
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__poster img,
+.hero__video {
+  object-fit: cover;
+  filter: saturate(0.74) contrast(1.05) brightness(1.03) sepia(0.07);
+}
+
+.hero__video {
+  opacity: 0;
+  transition: opacity 500ms var(--ease);
+}
+
+.hero__video[data-playing="true"] {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__video {
+    display: none;
+  }
+}
+
 .hero__figure-secondary {
   display: none;
 }
@@ -960,7 +989,7 @@ section[id] {
     bottom: clamp(-2rem, -3vw, -1rem);
     width: clamp(9rem, 15vw, 13rem);
     aspect-ratio: 3 / 4;
-    border: 6px solid var(--paper);
+    border: 3px solid var(--paper);
   }
 }
 
@@ -1074,7 +1103,7 @@ section[id] {
 }
 
 .feature:hover .feature__media img {
-  scale: 1.03;
+  scale: 1.015;
 }
 
 .feature__index {
@@ -1353,7 +1382,7 @@ section[id] {
 }
 
 .space__item:hover img {
-  scale: 1.04;
+  scale: 1.015;
 }
 
 @media (min-width: 780px) {
@@ -1422,6 +1451,31 @@ section[id] {
   border-bottom: 1px solid var(--line);
   font-size: var(--step--1);
   color: var(--ink-mute);
+}
+
+.lightbox__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.lightbox__nav {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  color: var(--forest);
+  border: 1px solid var(--line);
+  transition: color 280ms var(--ease), border-color 280ms var(--ease);
+}
+
+.lightbox__nav:hover {
+  color: var(--copper);
+  border-color: var(--line-strong);
+}
+
+.lightbox__nav--prev svg {
+  rotate: 180deg;
 }
 
 .lightbox__close {
@@ -2082,7 +2136,17 @@ section[id] {
 .footer__cols {
   display: grid;
   gap: var(--space-6);
-  grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+  grid-template-columns: 1fr;
+}
+
+.footer__list a {
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 600px) {
+  .footer__cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .footer__title {
@@ -2155,6 +2219,10 @@ section[id] {
   .footer__top {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
     gap: clamp(3rem, 6vw, 6rem);
+  }
+
+  .footer__cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

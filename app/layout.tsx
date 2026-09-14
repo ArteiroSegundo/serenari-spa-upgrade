@@ -4,6 +4,7 @@ import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import WhatsAppFab from "@/components/site/WhatsAppFab";
 import ConsentBanner from "@/components/site/ConsentBanner";
+import RevealObserver from "@/components/ui/RevealObserver";
 import { business, SITE_URL } from "@/lib/site";
 import { daySpaSchema, websiteSchema } from "@/lib/schema";
 import "./globals.css";
@@ -50,12 +51,21 @@ export const metadata: Metadata = {
     title: "Serenari Spa | Massagem e massoterapia em Suzano/SP",
     description:
       "Um espaço de pausa, cuidado e reconexão em Suzano/SP. Massagens, drenagem linfática e terapias corporais.",
+    images: [
+      {
+        url: "/sobre-nos/01.jpg",
+        width: 1086,
+        height: 1448,
+        alt: "Lounge de espera do Serenari Spa em Suzano",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Serenari Spa | Massagem e massoterapia em Suzano/SP",
     description:
       "Um espaço de pausa, cuidado e reconexão em Suzano/SP. Massagens, drenagem linfática e terapias corporais.",
+    images: ["/sobre-nos/01.jpg"],
   },
   robots: {
     index: true,
@@ -74,6 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR" className={`${cormorant.variable} ${jost.variable}`}>
       <body>
+        <RevealObserver />
         {/* Content is revealed on scroll; without JS it must still be readable. */}
         <noscript>
           <style>{`.reveal,.reveal--mask,.reveal--mask>*{opacity:1!important;transform:none!important;clip-path:none!important}`}</style>

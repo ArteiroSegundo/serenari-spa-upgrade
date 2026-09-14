@@ -34,7 +34,6 @@ export default function FeaturedTherapies() {
                   height={service.cover.height}
                   sizes="(min-width: 860px) 45vw, 100vw"
                   quality={76}
-                  loading={index === 0 ? "eager" : "lazy"}
                 />
               </Reveal>
 
