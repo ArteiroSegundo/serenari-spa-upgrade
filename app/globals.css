@@ -63,7 +63,8 @@
   --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
   --dur: 700ms;
 
-  --header-h: 74px;
+  /* Tall enough for the stacked brand logo (symbol over wordmark) to stay legible. */
+  --header-h: 88px;
 }
 
 /* =============================================================
@@ -353,20 +354,20 @@ section[id] {
    BRAND ORNAMENTS
    ============================================================= */
 
-/* The white lockup asset is painted with currentColor through a mask,
-   so one file serves the light header and the dark footer. */
+/* One logo file for the whole site. It is painted with currentColor through a mask,
+   so the same asset serves the light header and the dark footer. */
 .logo {
   display: block;
-  width: 129px;
-  height: 45px;
+  width: 76px;
+  height: 60px;
   background-color: currentColor;
-  -webkit-mask: url("/brand/serenari-lockup.png") center / contain no-repeat;
-  mask: url("/brand/serenari-lockup.png") center / contain no-repeat;
+  -webkit-mask: url("/brand/serenari-mark.png") center / contain no-repeat;
+  mask: url("/brand/serenari-mark.png") center / contain no-repeat;
 }
 
 .logo--lg {
-  width: 172px;
-  height: 60px;
+  width: 121px;
+  height: 96px;
 }
 
 .sparkle {
@@ -376,17 +377,18 @@ section[id] {
   color: var(--copper);
 }
 
-/* The real brand symbol, cropped from the lockup and painted through a mask so it
-   picks up the section's colour. Kept faint and deliberately cut by the section edge. */
+/* The brand logo used as texture: large, cropped by the section edge and very faint.
+   Same asset as the header and footer, painted through a mask so it picks up the
+   section's colour. */
 .mark-watermark {
   position: absolute;
   pointer-events: none;
-  width: clamp(11rem, 38vw, 32rem);
-  aspect-ratio: 535 / 883;
+  width: clamp(13rem, 42vw, 36rem);
+  aspect-ratio: 1566 / 1239;
   background-color: var(--forest);
   opacity: 0.06;
-  -webkit-mask: url("/brand/serenari-symbol.png") center / contain no-repeat;
-  mask: url("/brand/serenari-symbol.png") center / contain no-repeat;
+  -webkit-mask: url("/brand/serenari-mark.png") center / contain no-repeat;
+  mask: url("/brand/serenari-mark.png") center / contain no-repeat;
 }
 
 .section--ink .mark-watermark {
@@ -695,8 +697,8 @@ section[id] {
 }
 
 .header__logo .logo {
-  width: 112px;
-  height: 39px;
+  width: 70px;
+  height: 55px;
 }
 
 .header__nav {
