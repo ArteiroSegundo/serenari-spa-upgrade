@@ -934,6 +934,33 @@ section[id] {
   }
 }
 
+/* WCAG 2.2.2: a loop that starts on its own and runs past five seconds needs a
+   visible way to stop it, independent of the video itself being decorative.
+   Sits bottom-left, clear of the arch's rounded top and of the inset photo
+   anchored bottom-right. */
+.hero__video-toggle {
+  position: absolute;
+  left: var(--space-4);
+  bottom: var(--space-4);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background-color: rgba(27, 31, 28, 0.5);
+  color: var(--paper-pure);
+  backdrop-filter: blur(6px);
+  transition: background-color 240ms var(--ease), transform 240ms var(--ease);
+}
+
+.hero__video-toggle:hover,
+.hero__video-toggle:focus-visible {
+  background-color: rgba(27, 31, 28, 0.72);
+  transform: scale(1.06);
+}
+
 .hero__figure-secondary {
   display: none;
 }
@@ -960,16 +987,25 @@ section[id] {
     gap: clamp(3rem, 6vw, 6rem);
   }
 
+  /* Width always fills the media column; height is the dimension that responds
+     to viewport height. The previous rule (aspect-ratio 3/4 + max-height) derived
+     width FROM the height once max-height took over — on ordinary laptop screens
+     (roughly 1366x768 and shorter) that shrank the figure to as little as 70% of
+     its column, leaving a bare gap on the right and reading as "centred" rather
+     than filling its half of the hero. */
   .hero__figure {
-    aspect-ratio: 3 / 4;
-    max-height: calc(100svh - var(--header-h) - clamp(5rem, 12vh, 9rem));
+    width: 100%;
+    height: clamp(20rem, calc(100svh - var(--header-h) - clamp(5rem, 12vh, 9rem)), 46rem);
   }
 
   .hero__figure-secondary {
     display: block;
     position: absolute;
-    left: clamp(-6rem, -6vw, -3rem);
-    bottom: clamp(-2rem, -3vw, -1rem);
+    /* Anchored to the outer edge, away from the copy. Pulling it toward the left
+       (the previous rule) pushed it into the gutter next to the text column,
+       leaving only ~10-20px of clearance regardless of viewport width. */
+    right: clamp(-3rem, -4vw, -1.5rem);
+    bottom: clamp(-1.5rem, -2vw, -0.75rem);
     width: clamp(9rem, 15vw, 13rem);
     aspect-ratio: 3 / 4;
     border: 3px solid var(--paper);
