@@ -55,6 +55,7 @@ export default function SocialProof() {
                     width={item.avatar.width}
                     height={item.avatar.height}
                     sizes="44px"
+                    quality={76}
                   />
                   <span>
                     {item.name}

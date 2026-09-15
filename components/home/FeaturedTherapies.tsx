@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/ui/Reveal";
 import { ArrowRight } from "@/components/ui/Icons";
-import { featuredServices } from "@/lib/services";
+import { featuredServices, serviceCount, serviceCountWord } from "@/lib/services";
 
 export default function FeaturedTherapies() {
   return (
@@ -17,8 +17,8 @@ export default function FeaturedTherapies() {
           </Reveal>
           <Reveal delay={120}>
             <p className="body-soft">
-              São as sessões mais procuradas da casa. O portfólio completo tem catorze — e a escolha certa
-              depende menos do nome da técnica do que do que você está sentindo hoje.
+              São as sessões mais procuradas da casa. O portfólio completo tem {serviceCountWord} — e a escolha
+              certa depende menos do nome da técnica do que do que você está sentindo hoje.
             </p>
           </Reveal>
         </div>
@@ -56,7 +56,7 @@ export default function FeaturedTherapies() {
         <Reveal delay={100}>
           <div className="btn-row section-foot">
             <Link className="btn btn--ghost" href="/terapias">
-              Explorar todas as 14 terapias
+              Explorar todas as {serviceCount} terapias
               <ArrowRight size={16} />
             </Link>
           </div>

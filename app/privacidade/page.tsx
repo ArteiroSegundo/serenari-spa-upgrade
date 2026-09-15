@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function PrivacidadePage() {
   return (
-    <LegalPage title="Política de Privacidade" updatedAt="29 de maio de 2024">
+    <LegalPage title="Política de Privacidade" updatedAt="15 de setembro de 2026">
 
       <h2>1. Introdução</h2>
       <p>
@@ -55,50 +55,39 @@ export default function PrivacidadePage() {
       </ul>
 
       <h3>2.2. Dados Coletados Automaticamente</h3>
+      <p>
+        Este site <strong>não utiliza ferramentas de análise, métricas ou publicidade</strong> e não monta perfis de
+        navegação. A única coleta automática é a que qualquer servidor web registra para manter o site no ar:
+      </p>
       <ul>
         <li>
-          <strong>Dados de Navegação:</strong> Informações sobre como você acessa e usa nosso site, como endereço IP,
-          tipo de navegador, sistema operacional, páginas visitadas, tempo de permanência, referências de URL e
-          dados de localização aproximada.
-        </li>
-        <li>
-          <strong>Cookies e Tecnologias Semelhantes:</strong> Utilizamos cookies para rastrear a atividade em nosso
-          site e manter certas informações. Consulte a seção 3 para mais detalhes.
+          <strong>Registros de Servidor:</strong> Nosso provedor de hospedagem mantém logs técnicos com endereço IP,
+          data e hora do acesso, página solicitada e identificação do navegador. Esses registros são usados apenas
+          para segurança, diagnóstico de falhas e prevenção de abuso, e são retidos por prazo limitado pelo
+          provedor.
         </li>
       </ul>
 
-      <h2>3. Uso de Cookies</h2>
+      <h2>3. Cookies</h2>
       <p>
-        Cookies são pequenos arquivos de texto armazenados no seu dispositivo (computador, tablet, celular) quando
-        você visita um site. Eles são amplamente utilizados para fazer os sites funcionarem, ou funcionarem de forma
-        mais eficiente, bem como para fornecer informações aos proprietários do site.
+        <strong>Não utilizamos cookies próprios neste site.</strong> Não há cookies de análise, de publicidade ou de
+        preferência, e por isso não exibimos banner de consentimento — não existe rastreamento para você aceitar ou
+        recusar.
       </p>
-      <h3>3.1. Como Usamos Cookies</h3>
-      <ul>
-        <li>
-          <strong>Cookies Essenciais:</strong> Necessários para o funcionamento básico do site, como navegar entre
-          páginas e acessar áreas seguras. Sem eles, o site não funcionaria corretamente.
-        </li>
-        <li>
-          <strong>Cookies de Desempenho e Análise:</strong> Coletam informações anônimas sobre como os visitantes
-          usam o site, quais páginas são mais acessadas, etc. Isso nos ajuda a entender e melhorar a experiência do
-          usuário.
-        </li>
-        <li>
-          <strong>Cookies de Preferência:</strong> Lembram suas escolhas (como idioma ou região) para fornecer uma
-          experiência mais personalizada.
-        </li>
-      </ul>
-      <h3>3.2. Gerenciamento de Cookies</h3>
+      <h3>3.1. Conteúdo de Terceiros</h3>
       <p>
-        Você pode controlar e/ou excluir cookies como desejar. Você pode apagar todos os cookies já presentes no seu
-        computador e configurar a maioria dos navegadores para evitar que eles sejam colocados. No entanto, se você
-        fizer isso, talvez precise ajustar manualmente algumas preferências toda vez que visitar nosso site, e
-        alguns serviços e funcionalidades podem não funcionar.
+        O mapa da página inicial é fornecido pelo Google Maps e <strong>só é carregado se você clicar em
+        &quot;Carregar o mapa&quot;</strong>. Até esse clique, nenhuma requisição é feita ao Google. A partir dele, o
+        Google pode definir cookies próprios e tratar seus dados conforme as políticas dele. As fontes tipográficas
+        do site são servidas pelo nosso próprio domínio, sem requisições a terceiros.
+      </p>
+      <p>
+        Links para WhatsApp, Instagram, Facebook e Google Maps levam você para fora deste site. A partir do momento
+        em que você sai daqui, valem as políticas de privacidade dessas plataformas (veja a seção 9).
       </p>
 
       <h2>4. Uso dos Seus Dados Pessoais</h2>
-      Utilizamos os dados coletados para diversas finalidades:
+      <p>Utilizamos os dados coletados para diversas finalidades:</p>
       <ul>
         <li>Para fornecer e manter nossos serviços, incluindo o processamento de agendamentos.</li>
         <li>Para gerenciar seu agendamento e contato com você.</li>
@@ -107,7 +96,6 @@ export default function PrivacidadePage() {
           Para enviar comunicações relevantes sobre nossos serviços, promoções ou informações importantes (com seu
           consentimento).
         </li>
-        <li>Para monitorar o uso do nosso site e realizar análises internas para melhorar a experiência do usuário.</li>
         <li>Para detectar, prevenir e resolver problemas técnicos ou de segurança.</li>
         <li>Para cumprir obrigações legais e regulatórias.</li>
       </ul>
@@ -119,10 +107,9 @@ export default function PrivacidadePage() {
       </p>
       <ul>
         <li>
-          <strong>Com Prestadores de Serviços:</strong> Podemos empregar empresas e indivíduos terceirizados para
-          facilitar nossos serviços (ex: hospedagem de site, ferramentas de comunicação), para realizar serviços
-          relacionados ao site ou para nos ajudar a analisar como nosso site é usado. Estes terceiros terão acesso
-          aos seus dados pessoais apenas para executar essas tarefas em nosso nome e são obrigados a não
+          <strong>Com Prestadores de Serviços:</strong> Podemos empregar empresas terceirizadas para viabilizar
+          nossos serviços — hospedagem do site e ferramentas de comunicação, como o WhatsApp. Estes terceiros terão
+          acesso aos seus dados pessoais apenas para executar essas tarefas em nosso nome e são obrigados a não
           divulgá-los ou usá-los para qualquer outra finalidade.
         </li>
         <li>
