@@ -27,10 +27,10 @@ export default function WhatsAppFab() {
       rel="noopener noreferrer"
       tabIndex={visible ? 0 : -1}
       aria-hidden={!visible}
+      aria-label="Agendar no WhatsApp"
     >
       <WhatsApp size={20} />
       <span className="fab__label">Agendar no WhatsApp</span>
-      <span className="visually-hidden">Abrir conversa no WhatsApp</span>
     </a>
   );
 }

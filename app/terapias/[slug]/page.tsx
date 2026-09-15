@@ -31,7 +31,9 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       title: `${title} | Serenari Spa`,
       description,
       url: `/terapias/${service.slug}`,
-      images: [{ url: service.cover.src }],
+      images: [
+        { url: `/og/services/${service.slug}.jpg`, width: 1200, height: 630, alt: service.cover.alt },
+      ],
     },
   };
 }
@@ -150,7 +152,10 @@ export default async function TherapyPage({ params }: Params) {
                   >
                     <Image
                       src={photo.src}
-                      alt={`${service.title} no Serenari Spa — foto ${index + 1}`}
+                      alt={
+                        photo.alt ??
+                        `${service.title} no Serenari Spa — foto ${index + 1} de ${service.gallery.length}`
+                      }
                       width={photo.width}
                       height={photo.height}
                       sizes="(min-width: 900px) 25vw, 50vw"

@@ -1,4 +1,9 @@
-export type Photo = { src: string; width: number; height: number };
+/**
+ * `alt` is optional because the gallery frames are supplementary views of the session
+ * the cover already describes. Fill it in whenever a frame shows something the cover
+ * does not — the therapy pages fall back to a positional description.
+ */
+export type Photo = { src: string; width: number; height: number; alt?: string };
 
 export const CATEGORIES = [
   "Massagens",
@@ -337,11 +342,12 @@ export const services: Service[] = [
       "Quem gosta de combinar cuidado com a pele e relaxamento",
     ],
     feels: "Textura, calor e uma pele visivelmente mais macia ao final.",
+    // Stock, not the Serenari rooms — the alt says so until a real session is photographed.
     cover: {
       src: "/esfoliacao-corporal.png",
       width: 1024,
       height: 1024,
-      alt: "Ilustração de esfoliação corporal com sais e texturas naturais",
+      alt: "Imagem ilustrativa de esfoliação corporal aplicada nas costas, com esfoliante de textura granulada",
     },
     gallery: [],
   },
@@ -412,17 +418,38 @@ export const services: Service[] = [
       "Quem quer retomar uma rotina de cuidados com o rosto",
     ],
     feels: "Vapor morno, aroma vegetal e um rosto limpo sem ardência.",
+    // Stock, not the Serenari rooms — the alt says so until a real session is photographed.
     cover: {
       src: "/limpeza-de-pele-natural.png",
       width: 777,
       height: 707,
-      alt: "Ilustração de limpeza de pele natural com ativos vegetais",
+      alt: "Imagem ilustrativa de limpeza de pele facial, com espuma sendo aplicada no rosto",
     },
     gallery: [],
   },
 ];
 
 export const featuredServices = services.filter((service) => service.featured);
+
+export const serviceCount = services.length;
+
+/**
+ * The editorial voice spells the portfolio size out ("catorze maneiras"). Keeping the
+ * word next to the number stops the copy from going stale when a therapy is added —
+ * it was written by hand in five places. Falls back to the numeral off the map.
+ */
+const COUNT_WORDS: Record<number, string> = {
+  11: "onze",
+  12: "doze",
+  13: "treze",
+  14: "catorze",
+  15: "quinze",
+  16: "dezesseis",
+  17: "dezessete",
+  18: "dezoito",
+};
+
+export const serviceCountWord = COUNT_WORDS[serviceCount] ?? String(serviceCount);
 
 export function getService(slug: string) {
   return services.find((service) => service.slug === slug);

@@ -3,21 +3,28 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/ui/Reveal";
 import { ArrowRight } from "@/components/ui/Icons";
-import { activeCategories, services } from "@/lib/services";
+import { activeCategories, serviceCount, serviceCountWord, services } from "@/lib/services";
 import { wellnessDisclaimer } from "@/lib/content";
 import { breadcrumbSchema } from "@/lib/schema";
 import { whatsappLink, whatsappMessages } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terapias e massagens em Suzano/SP",
-  description:
-    "As 14 terapias do Serenari Spa em Suzano/SP: massagem relaxante, terapêutica, desportiva, pedras quentes, drenagem linfática, shiatsu, reflexologia e cuidados faciais.",
+  description: `As ${serviceCount} terapias do Serenari Spa em Suzano/SP: massagem relaxante, terapêutica, desportiva, pedras quentes, drenagem linfática, shiatsu, reflexologia e cuidados faciais.`,
   alternates: { canonical: "/terapias" },
   openGraph: {
     title: "Terapias e massagens em Suzano/SP | Serenari Spa",
     description:
       "Massagens, drenagem linfática, terapias integrativas e cuidados faciais no Serenari Spa, em Suzano/SP.",
     url: "/terapias",
+    images: [
+      {
+        url: "/og/terapias.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Massagem com pedras quentes aplicada nas costas de um cliente no Serenari Spa",
+      },
+    ],
   },
 };
 
@@ -37,8 +44,8 @@ export default function TherapiesPage() {
               <p className="overline">Portfólio completo</p>
             </Reveal>
             <Reveal delay={80}>
-              <h1 className="h1">
-                Catorze maneiras de <em>cuidar</em> de um corpo
+              <h1 className="h1 first-letter-caps">
+                {serviceCountWord} maneiras de <em>cuidar</em> de um corpo
               </h1>
             </Reveal>
             <Reveal delay={140}>

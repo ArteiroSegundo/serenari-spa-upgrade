@@ -27,7 +27,7 @@ export default function Experience() {
       <div className="shell">
         <div className="manifesto__body">
           <Reveal>
-            <p className="overline">A experiência</p>
+            <h2 className="overline">A experiência</h2>
           </Reveal>
 
           <Reveal delay={80}>
@@ -41,7 +41,7 @@ export default function Experience() {
             {moments.map((moment, index) => (
               <Reveal as="li" key={moment.index} delay={index * 90} className="chapter">
                 <span className="chapter__index">{moment.index}</span>
-                <h2 className="chapter__title">{moment.title}</h2>
+                <h3 className="chapter__title">{moment.title}</h3>
                 <p className="body-soft">{moment.text}</p>
               </Reveal>
             ))}

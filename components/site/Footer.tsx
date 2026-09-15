@@ -7,8 +7,6 @@ import { services } from "@/lib/services";
 const highlighted = services.filter((service) => service.featured).slice(0, 4);
 
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="footer">
       <div className="shell">
@@ -126,8 +124,9 @@ export default function Footer() {
         </div>
 
         <div className="footer__bottom">
+          {/* No year: these pages are prerendered, so a build-time year silently goes stale. */}
           <p>
-            © {year} {business.legalName} · CNPJ {business.cnpj}
+            © {business.legalName} · CNPJ {business.cnpj}
           </p>
           <div className="footer__legal">
             <Link href="/privacidade">Política de Privacidade</Link>

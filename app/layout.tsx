@@ -3,7 +3,6 @@ import { Cormorant_Garamond, Jost } from "next/font/google";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import WhatsAppFab from "@/components/site/WhatsAppFab";
-import ConsentBanner from "@/components/site/ConsentBanner";
 import RevealObserver from "@/components/ui/RevealObserver";
 import { business, SITE_URL } from "@/lib/site";
 import { daySpaSchema, websiteSchema } from "@/lib/schema";
@@ -53,10 +52,10 @@ export const metadata: Metadata = {
       "Um espaço de pausa, cuidado e reconexão em Suzano/SP. Massagens, drenagem linfática e terapias corporais.",
     images: [
       {
-        url: "/sobre-nos/01.jpg",
-        width: 1086,
-        height: 1448,
-        alt: "Lounge de espera do Serenari Spa em Suzano",
+        url: "/og/serenari-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Sala de massagem dupla do Serenari Spa, preparada com enxoval branco e bandeja de boas-vindas",
       },
     ],
   },
@@ -65,7 +64,7 @@ export const metadata: Metadata = {
     title: "Serenari Spa | Massagem e massoterapia em Suzano/SP",
     description:
       "Um espaço de pausa, cuidado e reconexão em Suzano/SP. Massagens, drenagem linfática e terapias corporais.",
-    images: ["/sobre-nos/01.jpg"],
+    images: ["/og/serenari-og.jpg"],
   },
   robots: {
     index: true,
@@ -98,7 +97,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="conteudo">{children}</main>
         <Footer />
         <WhatsAppFab />
-        <ConsentBanner />
 
         <script
           type="application/ld+json"

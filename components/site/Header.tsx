@@ -68,7 +68,12 @@ export default function Header() {
     };
   }, [open]);
 
-  const isCurrent = (href: string) => href === pathname || (href !== "/" && pathname.startsWith(href));
+  /** "page" only for the exact URL; a section index that merely contains it is "true". */
+  const currentState = (href: string) => {
+    if (href === pathname) return "page" as const;
+    if (href !== "/" && pathname.startsWith(`${href}/`)) return "true" as const;
+    return undefined;
+  };
 
   return (
     <>
@@ -85,7 +90,7 @@ export default function Header() {
                   <Link
                     href={item.href}
                     className="header__link"
-                    aria-current={isCurrent(item.href) ? "page" : undefined}
+                    aria-current={currentState(item.href)}
                   >
                     {item.label}
                   </Link>
