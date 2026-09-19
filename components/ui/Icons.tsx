@@ -31,6 +31,23 @@ export function ArrowRight(props: IconProps) {
   );
 }
 
+export function Pause(props: IconProps) {
+  return (
+    <Icon {...props} fill="currentColor" stroke="none">
+      <rect x="6" y="5" width="4" height="14" rx="1" />
+      <rect x="14" y="5" width="4" height="14" rx="1" />
+    </Icon>
+  );
+}
+
+export function Play(props: IconProps) {
+  return (
+    <Icon {...props} fill="currentColor" stroke="none">
+      <path d="M7 5v14l12-7Z" />
+    </Icon>
+  );
+}
+
 export function MapPin(props: IconProps) {
   return (
     <Icon {...props}>
